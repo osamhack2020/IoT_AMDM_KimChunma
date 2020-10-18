@@ -193,7 +193,7 @@ IS_LOCK | INTEGER | X
 
 ## 팀 정보 (Team Information) 💙
 - 김영호 (yeongho.kim2000@gmail.com), Github Id: yeonghokim
-- 부규필 (@gmail.com), Github Id: Qfeel-Dev
+- 부규필 (qfeel0812@gmail.com), Github Id: Qfeel-Dev
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License) - 미완성
  * [linechart](https://github.com/PhilJay/MPAndroidChart)
