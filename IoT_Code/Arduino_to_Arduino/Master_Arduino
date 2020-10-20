@@ -6,26 +6,34 @@
 #define Master_Open  0xFD08F7
 #define Master_Close 0xFD8877
 
-#define Station_1 	 0xFD48B7
-#define Station_2 	 0xFD28D7
-#define Station_3 	 0xFDA857
-#define Station_4 	 0xFD6897
+#define Station_1 	 0xFD48B7 //1번 보관함
+#define Station_2 	 0xFD28D7 //2번 보관함
+#define Station_3 	 0xFDA857 //3번 보관함
+#define Station_4 	 0xFD6897 //4번 보관함
 
+#define STX	0x02
+#define ETX	0x03
 
 IRrecv irrecv(12);
 decode_results results;
 
+char Data_Parse[9] = {0,};
+int Lock_Flag;
+char hexadecimal[50] = {0, };
+int position = 0;
+int decimal = 0;
+
 
 void setup() {
   Wire.begin(); // Wire 라이브러리 초기화 //마스터 지정
-  
-  
+    
   Serial.begin(9600); // 직렬 통신 초기화
-  irrecv.enableIRIn();//적외선 센서 활성화
+  irrecv.enableIRIn();//적외선 센서 활성화   
   
-  Serial.println("I2C");  
-}
+  Serial.println("Master Initialize end");   
+  Lock_Flag = 0;
 
+}
 
 void loop() {
   
@@ -33,13 +41,52 @@ void loop() {
   	
     Serial.println(results.value,HEX);
     //데이터 파싱 및 송신
-    if(results.value == Master_Open){send_Data("Master_Open");}//Master key
-    else if(results.value == Master_Close){send_Data("Master_Close");}//Master key        
-    else{
-        send_Data("Door Open");
-    }            
+    Data_Parse[0] = STX;
     
+    //타겟 아두이노(슬레이브 주소) 데이터 파싱 //임시지정
+    if(results.value){
+    	Data_Parse[1] = '0';
+        Data_Parse[2] = '0';
+        Data_Parse[3] = '1';
+    }
+            
+    //잠금장치 타겟 데이터 파싱
+    if(results.value == Master_Open || results.value == Master_Close){
+    	Data_Parse[4] = 'A';      	      	            
+    }//전체
+    
+    else{
+      if(results.value == Station_1) {Data_Parse[4] = '1';}
+      else if(results.value == Station_2) {Data_Parse[4] = '2';}
+      else if(results.value == Station_3) {Data_Parse[4] = '3';}
+      else if(results.value == Station_4) {Data_Parse[4] = '4';}                
+    }//id별
+    
+    
+    //잠금장치 동작 지시 //임시 지정
+    if(!Lock_Flag){Data_Parse[5] = 'O'; Data_Parse[6] = 'P';}//개방
+    else if(Lock_Flag){Data_Parse[5] = 'C'; Data_Parse[6] = 'L';}//폐쇄
+    
+    Data_Parse[7] = ETX;
+       
+    if(Data_Parse[0] == STX && Data_Parse[7] == ETX) Send_Data(Data_Parse);    
+      
     delay(30);
     irrecv.resume();
   }
+}
+
+
+void Send_Data(char c[]){
+    Wire.beginTransmission(SLAVE);
+    Wire.write(c);
+    Wire.endTransmission();  
+}
+
+void global_init(){
+	decimal = 0;
+	position = 0;
+  	for(int i = 0; i<20; i++){
+		hexadecimal[i] = 0;  		
+  	}
 }
