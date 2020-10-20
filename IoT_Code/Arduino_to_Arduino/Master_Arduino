@@ -1,0 +1,45 @@
+#include <IRremote.h>
+#include <Wire.h>
+
+#define SLAVE 4 // 슬레이브 주소
+
+#define Master_Open  0xFD08F7
+#define Master_Close 0xFD8877
+
+#define Station_1 	 0xFD48B7
+#define Station_2 	 0xFD28D7
+#define Station_3 	 0xFDA857
+#define Station_4 	 0xFD6897
+
+
+IRrecv irrecv(12);
+decode_results results;
+
+
+void setup() {
+  Wire.begin(); // Wire 라이브러리 초기화 //마스터 지정
+  
+  
+  Serial.begin(9600); // 직렬 통신 초기화
+  irrecv.enableIRIn();//적외선 센서 활성화
+  
+  Serial.println("I2C");  
+}
+
+
+void loop() {
+  
+  if(irrecv.decode(&results)){//RFID 테크 입력
+  	
+    Serial.println(results.value,HEX);
+    //데이터 파싱 및 송신
+    if(results.value == Master_Open){send_Data("Master_Open");}//Master key
+    else if(results.value == Master_Close){send_Data("Master_Close");}//Master key        
+    else{
+        send_Data("Door Open");
+    }            
+    
+    delay(30);
+    irrecv.resume();
+  }
+}

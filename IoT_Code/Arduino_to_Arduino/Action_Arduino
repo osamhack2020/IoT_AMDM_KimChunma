@@ -1,0 +1,55 @@
+#include <Servo.h>
+
+Servo servo_3;
+Servo servo_5;
+Servo servo_6;
+Servo servo_9;
+
+int Sense_Flag[4] = {0,};
+
+
+void setup()
+{
+  	Serial.begin(9600);
+  
+	servo_3.attach(3);
+    servo_5.attach(5);
+    servo_6.attach(6);
+    servo_9.attach(9);
+  	
+  	init_val(0);//Door All Open
+ 
+}
+
+void loop()
+{  	//5-3 , 4-5  3-6, 2-9
+   
+  	if(analogRead(A5) < 700){Sense_Flag[0] = 1;}  
+  	if(analogRead(A4) < 700){Sense_Flag[1] = 1;}    	
+  	if(analogRead(A3) < 700){Sense_Flag[2] = 1;}  
+  	if(analogRead(A2) < 700){Sense_Flag[3] = 1;}  	
+	
+  if(Sense_Flag[0] || Sense_Flag[1] || Sense_Flag[2] || Sense_Flag[3]){
+  	delay(3000);
+    if(Sense_Flag[0]) servo_3.write(45);
+    if(Sense_Flag[1]) servo_5.write(45);
+    if(Sense_Flag[2]) servo_6.write(45);
+    if(Sense_Flag[3]) servo_9.write(45);  
+  
+    for(int i = 0; i<4; i++) Sense_Flag[i] = 0;
+  }
+      	
+}
+
+void init_val(int value)
+{
+	servo_3.write(value);
+  	servo_5.write(value);
+  	servo_6.write(value);
+  	servo_9.write(value);
+  
+  	delay(1000); 	
+}
+
+
+  	
