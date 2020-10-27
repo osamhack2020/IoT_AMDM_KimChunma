@@ -4,7 +4,7 @@
 
 ### 로고
 
-![Logo](https://raw.githubusercontent.com/yeonghokim/AMDM/main/logo/Logo_300x300.png)
+![Logo](https://github.com/yeonghokim/AMDM/blob/main/logo/Logo_Github.png)
 
 AMDM의 로고는 초승달과 자물쇠가 합쳐서 좋은 밤을 위해서는 보안을 잠그자 라는 뜻을 의미하고 있습니다.
 
