@@ -13,7 +13,7 @@
 
 ## 기능 설계
  - [안드로이드 디자인 Kakao Oven](https://ovenapp.io/project/qREXQacVLW1qzBvL5xhXo0wNgUoqVt7W#ScIyR)
-
+ - [아두이노 시뮬레이팅 Thinker CAD] (https://www.tinkercad.com/things/cZuXuEFHrnm)
 ## 구성 / 필수 조건 안내 (Prerequisites)
 * Android 6.0 (Marshmallow) 이상 
 * 휴대폰 NFC, 인터넷 기능 필수
