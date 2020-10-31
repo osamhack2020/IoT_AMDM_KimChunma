@@ -9,7 +9,8 @@
 <p align="center">AMDM의 로고는 초승달과 자물쇠가 합쳐서 좋은 밤을 위해서는 보안을 잠그자 라는 뜻을 의미하고 있습니다.</p>
 
 ## 팀소개 및 프로젝트 설명 동영상 👍
-[![Watch the video](https://img.youtube.com/vi/LjX3eVQdIyk/0.jpg)](https://www.youtube.com/watch?time_continue=117&v=LjX3eVQdIyk)
+![AMDM 프로젝트 발표자료(최종본)_22](https://user-images.githubusercontent.com/71952165/97779919-a1fa2f80-1bc4-11eb-9d8d-1fddcd1b012c.png)(https://youtu.be/HRwMVqA-am0)
+
 
 ## 기능 설계
  - [안드로이드 디자인 Kakao Oven](https://ovenapp.io/project/qREXQacVLW1qzBvL5xhXo0wNgUoqVt7W#ScIyR)
