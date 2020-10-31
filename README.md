@@ -92,10 +92,10 @@ $ .open AMDMserver.sqlite3
     * ServerTime.py는 서버의 시간을 체크하는 코드입니다.
     
 ## IoT장비 데이터 교환
-참고 : 데이터 교환.txt
+참고 : [데이터 교환.txt](https://github.com/osamhack2020/APP_AMDM_KimChunma/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%90%ED%99%98.txt)
 
 ## DataBase (SQLite)
-참고 : 데이터베이스 스키마.txt
+참고 : [데이터베이스 스키마.txt](https://github.com/osamhack2020/APP_AMDM_KimChunma/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EC%8A%A4%ED%82%A4%EB%A7%88.txt)
 
 
 ## 팀 정보 (Team Information) 💙
