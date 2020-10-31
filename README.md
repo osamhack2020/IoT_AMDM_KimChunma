@@ -38,7 +38,7 @@
  - Lock구현을 위해 Screen 없애질때마다 커스텀 액티비티로 대체함
  - TurnOnService 서비스 구현
 
-## 설치 안내 (Installation Process) - 미완성
+## 설치 안내 (Installation Process)
 
 ### Android apk 실행
 * ${Git Home}/app-debug.apk
