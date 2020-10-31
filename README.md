@@ -39,6 +39,16 @@
  - Lock구현을 위해 Screen 없애질때마다 커스텀 액티비티로 대체함
  - TurnOnService 서비스 구현
 
+## 시스템 아키텍처 (System Architecture)
+![AMDM 프로젝트 발표자료(최종본)_7](https://user-images.githubusercontent.com/71952165/97780042-87748600-1bc5-11eb-86f2-4142215e727b.png)
+
+## 시스템 라이프사이클 (System LifeCycle)
+ ### 반납 사이클
+ ![AMDM 프로젝트 발표자료(최종본)_9](https://user-images.githubusercontent.com/71952165/97780081-c73b6d80-1bc5-11eb-9a8c-2f6a5620f3ce.png)
+ 
+ ### 불출 사이클
+![AMDM 프로젝트 발표자료(최종본)_8](https://user-images.githubusercontent.com/71952165/97780072-ba1e7e80-1bc5-11eb-83ff-be0d3e93e655.png)
+
 ## 설치 안내 (Installation Process)
 
 ### Android apk 실행
