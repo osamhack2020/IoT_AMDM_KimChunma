@@ -119,5 +119,8 @@ $ .open AMDMserver.sqlite3
  * [MoonIcon](https://www.flaticon.com/free-icon/moon_1030337?term=moon&page=2&position=85)
 #### 코드
  * [linechart](https://github.com/PhilJay/MPAndroidChart)
+  Copyright ⓒ 2020 Philipp Jahoda
+  http://www.apache.org/licenses/LICENSE-2.0
+  Apache License 2.0
  * [tcp](https://github.com/DDANGEUN/TCP_ClientSocket/tree/master)
  * [NFC](https://github.com/codexpedia/android_nfc_read_write)
